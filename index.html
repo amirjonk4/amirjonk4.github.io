@@ -1,1 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clothing Store</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Your HTML content here -->
+    <header>
+        <h1>Welcome to Our Clothing Store</h1>
+        <!-- Navigation menu -->
+    </header>
+    <main>
+        <!-- Main content -->
+    </main>
+    <footer>
+        <!-- Footer content -->
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
 
+
+@RestController
+@RequestMapping("/api/products")
+public class ProductController {
+    @Autowired
+    private ProductService productService;
+
+    @GetMapping
+    public List<Product> getAllProducts() {
+        return productService.getAllProducts();
+    }
+
+    // Other CRUD operations
+}
+
+
+clothing-store/
+│
+├── src/
+│   ├── main/
+│   │   ├── java/              # Java source files
+│   │   │   └── com/
+│   │   │       └── example/
+│   │   │           └── clothingstore/
+│   │   │               ├── controllers/
+│   │   │               │   └── ProductController.java
+│   │   │               ├── models/
+│   │   │               │   └── Product.java
+│   │   │               └── services/
+│   │   │                   └── ProductService.java
+│   │   └── resources/        # Application properties, HTML templates, etc.
+│   │       ├── static/       # Static resources like CSS, JS, images
+│   │       └── templates/    # HTML templates
+│   └── test/                 # Test files
+│
+├── pom.xml                   # Maven dependencies
+└── README.md                 # Project documentation
